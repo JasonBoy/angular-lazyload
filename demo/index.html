@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+  <title>Angular lazyload demo</title>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../angular-lazyload.js"></script>
+  <script src="demo.js"></script>
+  <style>
+    ul > li {
+      list-style: none;
+      padding: 15px;
+      display: block;
+      font-size: 40px;
+      margin: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid;
+    }
+    .lazyload {
+      text-align: center;
+    }
+  </style>
+</head>
+<body ng-controller="Demo">
+
+  <div>
+    <ul>
+      <li ng-repeat="item in list track by $index">
+        {{ item.text }}
+      </li>
+    </ul>
+    <div class="lazyload" lazyload offset-bottom="100"></div>
+  </div>
+
+</body>
+</html>

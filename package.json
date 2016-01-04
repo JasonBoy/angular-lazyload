@@ -1,0 +1,32 @@
+{
+  "name": "angular-lazyload",
+  "version": "0.0.1",
+  "description": "Angular directive for lazy loading, especially for swiping up in mobile",
+  "main": "index.js",
+  "scripts": {
+    "build": "uglifyjs angular-lazyload.js --mangle --compress --comments -o angular-lazyload.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonBoy/angular-lazyload.git"
+  },
+  "keywords": [
+    "angular",
+    "lazyload",
+    "mobile",
+    "swipe"
+  ],
+  "author": {
+    "name": "Jason Jiang",
+    "email": "jasonlikenfs@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JasonBoy/angular-lazyload/issues"
+  },
+  "homepage": "https://github.com/JasonBoy/angular-lazyload#readme",
+  "dependencies": {
+    "angular": "^1.4.8"
+  }
+}
