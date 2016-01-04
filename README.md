@@ -1,11 +1,11 @@
 # angular-lazyload
 Angular directive for lazy loading, especially for swiping up in mobile when working with pagination, slide up to load more  
   
-###Install
+### Install
 
 `npm install angular-lazyload`
 
-###Usage
+### Usage
 
 `<div lazyload></div>`
 
@@ -28,7 +28,7 @@ angular.module('myModule', ['lazyload'])
   ;
 ```  
 
-###Directive Options
+### Directive Options
 
 **container**: where the touch events should be bound to, default is document.
 
@@ -40,7 +40,7 @@ angular.module('myModule', ['lazyload'])
 
 **swipeDistance**: how long the user should slide up their finger. default 50(px).
 
-###Events
+### Events
 
 **lazyLoading**: when you get this event, you should load data now.
 
@@ -48,7 +48,7 @@ angular.module('myModule', ['lazyload'])
 
 **allLoaded**: you should notify the directive to finish the lifecycle after you get all data.
 
-###Demo  
+### Demo  
 
 see demo in demo dir.
 
