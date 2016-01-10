@@ -26,7 +26,7 @@
         element.html(swipeText);
         var container = $scope.container ? document.querySelector($scope.container) : window.document;
         var offsetBottom = !isNaN(parseInt($scope.offsetBottom)) ? parseInt($scope.offsetBottom) : 10;
-        var swipeDistance = !isNaN(parseInt($scope.swipeDistance)) ? parseInt($scope.swipeDistance) : 50;
+        var swipeDistance = !isNaN(parseInt($scope.swipeDistance)) ? parseInt($scope.swipeDistance) : 10;
         var needReloading = false;
         var startY = 0, moveY = 0, allLoaded = false;
 
