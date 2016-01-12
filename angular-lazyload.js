@@ -8,66 +8,55 @@
 (function(window, angular) {
   'use strict';
   var app = angular.module('lazyload', []);
-  app.directive('lazyload', [function (){
+  app.directive('lazyload', ['$timeout', function ($timeout){
     return {
       restrict: 'A',
       scope: {
-        container: '@', // on which touch events are bound on, default is document
-        swipeText: '@',
         loadingText: '@',
         offsetBottom: '@',
-        swipeDistance: '@'
+        waitDuration: '@'
       },
       link: function($scope, element, attrs) {
         element.css('visibility', 'hidden');
         $scope.lazyLoading = false;
-        var swipeText = $scope.swipeText || 'slide up to load more...',
-            loadingText = $scope.loadingText || 'loading...';
-        element.html(swipeText);
-        var container = $scope.container ? document.querySelector($scope.container) : window.document;
+        var loadingText = $scope.loadingText || 'loading...';
         var offsetBottom = !isNaN(parseInt($scope.offsetBottom)) ? parseInt($scope.offsetBottom) : 10;
-        var swipeDistance = !isNaN(parseInt($scope.swipeDistance)) ? parseInt($scope.swipeDistance) : 10;
-        var needReloading = false;
-        var startY = 0, moveY = 0, allLoaded = false;
-
-        container.addEventListener('touchstart', touchStartHandler);
-        container.addEventListener('touchmove', touchMoveHandler);
-        container.addEventListener('touchend', touchEndHandler);
+        //to prevent loading too often
+        var waitDuration = !isNaN(parseInt($scope.waitDuration)) ? parseInt($scope.waitDuration) : 500;
+        var allLoaded = false;
 
         $scope.$on('lazyLoadingFinished', function () {
           $scope.lazyLoading = false;
           element.css('visibility', 'hidden');
+          console.log('loading finished');
         });
         $scope.$on('allLoaded', function () {
           allLoaded = true;
+          $scope.lazyLoading = false;
           element.css('visibility', 'hidden');
-          container.removeEventListener('touchstart', touchStartHandler);
-          container.removeEventListener('touchmove', touchMoveHandler);
-          container.removeEventListener('touchend', touchEndHandler);
+          window.removeEventListener('scroll', scrollHandler, false);
         });
-        function touchStartHandler(e) {
-          startY = e.changedTouches[0].pageY;
-        }
-        function touchMoveHandler(e) {
+
+        var elementDom = element[0];
+        var bottomed = true, firstTime = true;
+        window.addEventListener('scroll', scrollHandler, false);
+        function scrollHandler() {
           if($scope.lazyLoading || allLoaded) return;
-          var position = element[0].getBoundingClientRect();
-          moveY = e.changedTouches[0].pageY;
-          needReloading = window.screen.availHeight - position.bottom > offsetBottom;
-          if(needReloading) {
-            element.html(swipeText);
-            element.css('visibility', 'visible');
-          }
-        }
-        function touchEndHandler(e) {
-          if(!allLoaded && needReloading && startY - moveY >= swipeDistance) {
+          var position = elementDom.getBoundingClientRect();
+          var screenHeight = screen.availHeight;
+          if(!bottomed && !firstTime) return;
+          if(screenHeight - position.bottom >= offsetBottom) {
+            firstTime = false;
             element.html(loadingText);
             $scope.lazyLoading = true;
-            $scope.$emit('lazyLoading');
-            return;
+            element.css('visibility', 'visible');
+            $timeout(function() {
+              $scope.$emit('lazyLoading');
+            }, waitDuration);
           }
-          element.css('visibility', 'hidden');
         }
       }
     };
   }]);
+
 })(window, window.angular);
