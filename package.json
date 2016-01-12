@@ -1,6 +1,6 @@
 {
   "name": "angular-lazyload",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Angular directive for lazy loading, especially for swiping up in mobile",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "angular",
     "lazyload",
     "mobile",
+    "slide",
     "swipe"
   ],
   "author": {

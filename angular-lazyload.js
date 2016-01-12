@@ -28,7 +28,6 @@
         $scope.$on('lazyLoadingFinished', function () {
           $scope.lazyLoading = false;
           element.css('visibility', 'hidden');
-          console.log('loading finished');
         });
         $scope.$on('allLoaded', function () {
           allLoaded = true;
