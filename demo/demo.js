@@ -5,7 +5,7 @@ angular.module('demo', ['lazyload'])
       text: 'test'
     };
     var tempList = [];
-    for(var i = 0; i < 5; i++) {
+    for(var i = 0; i < 10; i++) {
       tempList.push(temp);
     }
     $scope.list = [];
@@ -13,7 +13,7 @@ angular.module('demo', ['lazyload'])
     $scope.$on('lazyLoading', function () {
       $timeout(function() {
         $scope.list = $scope.list.concat(tempList);
-        if($scope.list.length > 15) {
+        if($scope.list.length > 50) {
           $scope.$broadcast('allLoaded');
           $scope.list = [{text: 'DONE'}];
           return;

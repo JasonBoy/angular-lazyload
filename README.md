@@ -30,15 +30,12 @@ angular.module('myModule', ['lazyload'])
 
 ### Directive Options
 
-**container**: where the touch events should be bound to, default is document.
-
-**swipeText**: content to display when you is sliding up, before releasing the touch, the default text is 'slide up to load more...', you can add some html for better UI.
 
 **loadingText**: content to display when loading the data, default is 'loading...'.
 
 **offsetBottom**: loading div's offset to the window bottom, default: 10, which means when the offset to the bottom >= 10px, you are about to reload data.
 
-**swipeDistance**: how long the user should slide up their finger. default 50(px).
+**waitDuration**: display the loading text with `waitDuration`ms to prevent loading too often.
 
 ### Events
 
