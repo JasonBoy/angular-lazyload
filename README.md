@@ -8,7 +8,7 @@ Angular directive for lazy loading, especially for mobile when working with pagi
 ### Usage
 
 `<div lazyload></div>` or  
-'<div lazyload><p>custom loading style...</p></div>'  
+`<div lazyload><p>custom loading style...</p></div>`  
 
 ```javascript
 angular.module('myModule', ['lazyload'])
