@@ -1,13 +1,14 @@
 # angular-lazyload
-Angular directive for lazy loading, especially for swiping up in mobile when working with pagination, slide up to load more  
-  
+Angular directive for lazy loading, especially for mobile when working with pagination, slide up to load more  
+
 ### Install
 
 `npm install angular-lazyload`
 
 ### Usage
 
-`<div lazyload></div>`
+`<div lazyload></div>` or  
+'<div lazyload><p>custom loading style...</p></div>'  
 
 ```javascript
 angular.module('myModule', ['lazyload'])
@@ -23,7 +24,7 @@ angular.module('myModule', ['lazyload'])
     $scope.$on('lazyLoading', function(){
       loadMore();
     });
-    
+
   });
   ;
 ```  
@@ -31,11 +32,13 @@ angular.module('myModule', ['lazyload'])
 ### Directive Options
 
 
-**loadingText**: content to display when loading the data, default is 'loading...'.
+**loadingText**: content to display when loading the data, default is 'loading...', if the element with the `lazyload` directive has inner html, it will use the inner html instead of the `loadingText`, with inner html, you can add complex loading styles, such as loading gif.
 
-**offsetBottom**: loading div's offset to the window bottom, default: 10, which means when the offset to the bottom >= 10px, you are about to reload data.
+**offsetBottom**: loading div's offset to the window bottom, default: 10px, which means when the offset to the bottom >= 10px, you are about to reload data.
 
-**waitDuration**: display the loading text with `waitDuration`ms to prevent loading too often.
+**waitDuration**: display the loading text with `waitDuration`ms to prevent loading too often, default: 500ms.
+
+**scale**: the scale in your `viewport` in `meta` tag, default is 1.
 
 ### Events
 
@@ -49,7 +52,6 @@ angular.module('myModule', ['lazyload'])
 
 see demo in demo dir.
 
+### License
 
-
-
-
+MIT

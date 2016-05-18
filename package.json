@@ -1,11 +1,10 @@
 {
   "name": "angular-lazyload",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "Angular directive for lazy loading, especially for swiping up in mobile",
   "main": "index.js",
   "scripts": {
-    "build": "uglifyjs angular-lazyload.js --mangle --compress --comments -o angular-lazyload.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "uglifyjs angular-lazyload.js --mangle --compress --comments -o angular-lazyload.min.js"
   },
   "repository": {
     "type": "git",
