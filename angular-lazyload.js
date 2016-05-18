@@ -1,11 +1,11 @@
-/**
+/**!
  * @license
  * Angular directive for lazy loading while swiping up, especially for swiping up in mobile
  * https://github.com/JasonBoy/angular-lazyload#readme
  * License: MIT
  */
 
-(function(window, angular) {
+;(function(window, angular) {
   'use strict';
   var app = angular.module('lazyload', []);
   app.directive('lazyload', ['$timeout', function ($timeout){
