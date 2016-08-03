@@ -1,3 +1,9 @@
+### 0.2.0
+
+- `scale` option change to `@`
+- use with 'E' element
+- update demo
+
 ### 0.1.5
 
 - add `scale` option to work with the `viewport` scale value

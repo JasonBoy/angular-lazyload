@@ -1,14 +1,17 @@
 # angular-lazyload
 Angular directive for lazy loading, especially for mobile when working with pagination, slide up to load more  
 
+[![angular-lazyload-demo](https://github.com/JasonBoy/angular-lazyload/blob/master/demo/angular-lazyload.gif)](https://github.com/JasonBoy/angular-lazyload/blob/master/demo/angular-lazyload.gif)
+
 ### Install
 
-`npm install angular-lazyload`
+`npm install angular-lazyload --save`
 
 ### Usage
 
 `<div lazyload></div>` or  
-`<div lazyload><p>custom loading style...</p></div>`  
+`<div lazyload><p>custom loading style...</p></div>` or   
+`<lazyload></lazyload>`  
 
 ```javascript
 angular.module('myModule', ['lazyload'])
@@ -32,13 +35,13 @@ angular.module('myModule', ['lazyload'])
 ### Directive Options
 
 
-**loadingText**: content to display when loading the data, default is 'loading...', if the element with the `lazyload` directive has inner html, it will use the inner html instead of the `loadingText`, with inner html, you can add complex loading styles, such as loading gif.
+**loadingText**: '@', content to display when loading the data, default is 'loading...', if the element with the `lazyload` directive has inner html, it will use the inner html instead of the `loadingText`, with inner html, you can add complex loading styles, such as loading gif.
 
-**offsetBottom**: loading div's offset to the window bottom, default: 10px, which means when the offset to the bottom >= 10px, you are about to reload data.
+**offsetBottom**: '@', loading div's offset to the window bottom, default: 10px, which means when the offset to the bottom >= 10px, you are about to reload data.
 
-**waitDuration**: display the loading text with `waitDuration`ms to prevent loading too often, default: 500ms.
+**waitDuration**: '@', display the loading text with `waitDuration`ms to prevent loading too often, default: 500ms.
 
-**scale**: the scale in your `viewport` in `meta` tag, default is 1.
+**scale**: '@', the scale in your `viewport` in `meta` tag, default is 1.
 
 ### Events
 
@@ -50,7 +53,7 @@ angular.module('myModule', ['lazyload'])
 
 ### Demo  
 
-see demo in demo dir.
+`npm install`, then see demo in `demo` dir.
 
 ### License
 

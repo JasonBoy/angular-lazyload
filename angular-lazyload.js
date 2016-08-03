@@ -10,13 +10,14 @@
   var app = angular.module('lazyload', []);
   app.directive('lazyload', ['$timeout', function ($timeout){
     return {
-      restrict: 'A',
+      restrict: 'EA',
       scope: {
         loadingText: '@',
         offsetBottom: '@',
         waitDuration: '@',
-        scale: '='
+        scale: '@'
       },
+      replace: true,
       link: function($scope, element, attrs) {
         var hasCustomLoadingStyle = !!element.html();
         element.css('visibility', 'hidden');
