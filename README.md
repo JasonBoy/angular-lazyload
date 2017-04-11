@@ -22,14 +22,12 @@ angular.module('myModule', ['lazyload'])
       if(noMore) {
         $scope.$broadcast('allLoaded'); //all data loaded, remove all the touch events
       }
-    }
+    };
     //listen on the user touch event, which will be fired from the directive
     $scope.$on('lazyLoading', function(){
       loadMore();
     });
-
   });
-  ;
 ```  
 
 ### Directive Options
