@@ -1,7 +1,7 @@
 {
   "name": "angular-lazyload",
-  "version": "0.2.0",
-  "description": "Angular directive for lazy loading, especially for swiping up in mobile",
+  "version": "0.3.0",
+  "description": "Angular directive for lazy loading, especially for slide up on mobile",
   "main": "index.js",
   "scripts": {
     "build": "uglifyjs angular-lazyload.js --mangle --compress --comments -o angular-lazyload.min.js"
@@ -26,7 +26,7 @@
     "url": "https://github.com/JasonBoy/angular-lazyload/issues"
   },
   "homepage": "https://github.com/JasonBoy/angular-lazyload#readme",
-  "dependencies": {
+  "devDependencies": {
     "angular": "^1.4.8"
   }
 }

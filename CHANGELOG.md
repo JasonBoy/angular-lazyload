@@ -1,3 +1,8 @@
+### 0.3.0
+
+- move angular to `devDependencies`
+- some readme updates
+
 ### 0.2.0
 
 - `scale` option change to `@`
