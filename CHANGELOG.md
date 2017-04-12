@@ -1,3 +1,7 @@
+### 0.3.2
+
+- angular ^1.3.0
+
 ### 0.3.0
 
 - move angular to `devDependencies`
